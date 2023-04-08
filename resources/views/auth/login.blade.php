@@ -64,6 +64,20 @@
                                             </span>
                                         </label>
                                     </div>
+                                    {{-- @if ($displayCaptcha)
+                                        <div class="form-group row">
+                                            <div class="col-md-6 offset-md-4">
+                                                {!! NoCaptcha::renderJs() !!}
+                                                {!! NoCaptcha::display() !!}
+
+                                                @error('g-recaptcha-response')
+                                                    <span class="invalid-feedback d-block" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    @endif --}}
                                     <div class="text-center mt-3">
                                         {{-- <a href="index-2.html" class="btn btn-lg btn-primary">Sign in</a> --}}
                                         <button type="submit" class="btn btn-lg btn-primary">Sign in</button>

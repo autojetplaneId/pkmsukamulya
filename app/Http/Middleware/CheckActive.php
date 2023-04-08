@@ -17,16 +17,17 @@ class CheckActive
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->check() && (auth()->user()->is_active == 0)){
-                Auth::logout();
+        if(auth()->check() && (auth()->user()->is_active == 0))
+            {
+                    Auth::logout();
 
-                $request->session()->invalidate();
+                    $request->session()->invalidate();
 
-                $request->session()->regenerateToken();
+                    $request->session()->regenerateToken();
 
-                return redirect()->route('login')->with('error', 'Akun anda belum aktif, Silahkan hubungi Administrator.');
+                    return redirect()->route('login')->with('error', 'Akun anda belum aktif, Silahkan hubungi Administrator.');
 
-        }
+            }
 
         return $next($request);
     }
